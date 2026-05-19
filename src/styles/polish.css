@@ -1,0 +1,133 @@
+/* ═══════════════════════════════════════════════
+   POLISH — Nexus3D Portfolio
+   Final visual refinements, edge-case fixes,
+   and premium micro-details.
+   ═══════════════════════════════════════════════ */
+
+/* ─── Hero title overflow protection ─── */
+.hero-title .line {
+  overflow: visible;
+}
+
+/* ─── Section border fade (top border fades left-to-right) ─── */
+section {
+  border-image: linear-gradient(90deg, var(--border), transparent) 1;
+}
+
+#hero {
+  border-image: none;
+}
+
+/* ─── Smooth scrollbar styling (Webkit) ─── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Firefox scrollbar */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.08) var(--bg);
+}
+
+/* ─── Nav glass enhancement — stronger on scroll ─── */
+nav.scrolled {
+  background: rgba(5, 5, 5, 0.7);
+}
+
+/* ─── Project row first-child no top border ─── */
+.project-row:first-child {
+  border-top: 1px solid var(--border);
+}
+
+/* ─── Certification card hover — inner content lift ─── */
+.cert-card:hover .cert-name {
+  color: var(--accent);
+  transition: color 0.3s;
+}
+
+/* ─── Timeline item hover dot glow enhancement ─── */
+.timeline-item:hover .timeline-role {
+  color: var(--accent);
+  transition: color 0.3s;
+}
+
+/* ─── Contact big text color ─── */
+.contact-big {
+  color: var(--muted-strong);
+}
+
+.contact-big span {
+  color: var(--accent);
+}
+
+/* ─── About statement line-height polish ─── */
+.about-statement .word-anim {
+  margin-right: 0.15em;
+}
+
+/* ─── Arch diagram connector lines (vertical pipe effect) ─── */
+.astra-diagram {
+  background: linear-gradient(180deg, var(--surface) 0%, rgba(15, 15, 15, 0.5) 100%);
+}
+
+/* ─── Loop pill active state for JS pulse ─── */
+.loop-pill.pulse {
+  border-color: rgba(0, 255, 135, 0.8);
+  box-shadow: 0 0 20px rgba(0, 255, 135, 0.2);
+}
+
+/* ─── Feature item left border indicator ─── */
+.feature-item {
+  border-left: 2px solid transparent;
+}
+
+.feature-item:hover {
+  border-left-color: var(--accent);
+}
+
+/* ─── Detail panel highlight arrow breathing ─── */
+.detail-highlight::before {
+  animation: arrowBreathe 2s ease-in-out infinite;
+}
+
+@keyframes arrowBreathe {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+/* ─── Preloader — accent line glow enhancement ─── */
+.pre-bar {
+  position: relative;
+}
+
+.pre-bar::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: -4px;
+  bottom: -4px;
+  width: 30px;
+  background: linear-gradient(90deg, transparent, var(--accent));
+  opacity: 0.5;
+  filter: blur(4px);
+}
+
+/* ─── Ghost text depth enhancement — varying opacity per layer ─── */
+.ghost-word--1 { color: rgba(255, 255, 255, 0.018); }
+.ghost-word--2 { color: rgba(255, 255, 255, 0.03); }
+.ghost-word--3 { color: rgba(255, 255, 255, 0.015); }
+.ghost-word--4 { color: rgba(255, 255, 255, 0.025); }
+.ghost-word--5 { color: rgba(255, 255, 255, 0.012); }

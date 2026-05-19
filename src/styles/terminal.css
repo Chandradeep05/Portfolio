@@ -1,0 +1,241 @@
+/* ═══════════════════════════════════════════════
+   ASTRA TERMINAL — Nexus3D Portfolio
+   Simulated neural interface terminal styles
+   ═══════════════════════════════════════════════ */
+
+/* ═══ TERMINAL CONTAINER ═══ */
+.astra-terminal {
+  margin-top: 4rem;
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(10, 10, 10, 0.95) 0%, rgba(5, 5, 5, 0.98) 100%);
+  position: relative;
+  overflow: hidden;
+  grid-column: 1 / -1;
+}
+
+/* Top bar with controls */
+.terminal-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.7rem 1rem;
+  border-bottom: 1px solid var(--border);
+  background: rgba(15, 15, 15, 0.8);
+}
+
+.terminal-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.terminal-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.terminal-dot--red { background: #ff5f56; }
+.terminal-dot--yellow { background: #ffbd2e; }
+.terminal-dot--green { background: #27c93f; }
+
+.terminal-title {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+}
+
+/* ─── Step Indicators ─── */
+.terminal-steps {
+  display: flex;
+  gap: 0.3rem;
+  padding: 0.6rem 1rem;
+  border-bottom: 1px solid var(--border);
+  background: rgba(10, 10, 10, 0.5);
+}
+
+.step-indicator {
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.7rem;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  transition: all 0.3s var(--ease-out);
+}
+
+.step-indicator.active {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-ultra);
+  box-shadow: 0 0 15px var(--glow);
+}
+
+/* Observe = cyan, Think = blue, Plan = purple, Act = green, Reflect = orange */
+.step-indicator[data-step="observe"].active {
+  border-color: #00d4ff;
+  color: #00d4ff;
+  background: rgba(0, 212, 255, 0.06);
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.15);
+}
+
+.step-indicator[data-step="think"].active {
+  border-color: #4488ff;
+  color: #4488ff;
+  background: rgba(68, 136, 255, 0.06);
+  box-shadow: 0 0 15px rgba(68, 136, 255, 0.15);
+}
+
+.step-indicator[data-step="plan"].active {
+  border-color: #a855f7;
+  color: #a855f7;
+  background: rgba(168, 85, 247, 0.06);
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.15);
+}
+
+.step-indicator[data-step="act"].active {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-ultra);
+  box-shadow: 0 0 15px var(--glow);
+}
+
+.step-indicator[data-step="reflect"].active {
+  border-color: #ff8c42;
+  color: #ff8c42;
+  background: rgba(255, 140, 66, 0.06);
+  box-shadow: 0 0 15px rgba(255, 140, 66, 0.15);
+}
+
+/* ─── Terminal Output ─── */
+.terminal-output {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  line-height: 1.8;
+  padding: 1.2rem 1rem;
+  min-height: 200px;
+  max-height: 320px;
+  overflow-y: auto;
+  color: var(--muted);
+}
+
+.terminal-output::-webkit-scrollbar {
+  width: 4px;
+}
+
+.terminal-output::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* Terminal line types */
+.terminal-line {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.15rem;
+  animation: termLineIn 0.15s ease-out;
+}
+
+@keyframes termLineIn {
+  from { opacity: 0; transform: translateX(-5px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.terminal-prefix {
+  flex-shrink: 0;
+  font-weight: 700;
+}
+
+.terminal-content {
+  color: var(--muted-strong);
+}
+
+/* Phase colors for prefixes */
+.terminal-line--observe .terminal-prefix { color: #00d4ff; }
+.terminal-line--think .terminal-prefix { color: #4488ff; }
+.terminal-line--plan .terminal-prefix { color: #a855f7; }
+.terminal-line--act .terminal-prefix { color: var(--accent); }
+.terminal-line--reflect .terminal-prefix { color: #ff8c42; }
+
+/* Result lines — accent highlighted */
+.terminal-line--result {
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+}
+
+.terminal-line--result .terminal-prefix {
+  color: var(--accent);
+}
+
+.terminal-line--result .terminal-content {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* ─── Terminal Input ─── */
+.terminal-input {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  padding: 0.8rem 1rem;
+  border-top: 1px solid var(--border);
+  color: var(--accent);
+  cursor: pointer;
+  transition: background 0.2s;
+  user-select: none;
+}
+
+.terminal-input:hover {
+  background: rgba(0, 255, 135, 0.02);
+}
+
+/* ─── Status Bar ─── */
+.terminal-status {
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.2em;
+  padding: 0.5rem 1rem;
+  border-top: 1px solid var(--border);
+  color: var(--accent);
+  background: rgba(0, 255, 135, 0.02);
+  text-transform: uppercase;
+  animation: statusGlow 2s ease-in-out infinite;
+}
+
+@keyframes statusGlow {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+/* ─── Ambient pulse overlay ─── */
+.astra-terminal::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border: 1px solid transparent;
+  transition: border-color 0.5s;
+}
+
+.astra-terminal.active::after {
+  border-color: rgba(0, 255, 135, 0.15);
+  box-shadow: inset 0 0 40px rgba(0, 255, 135, 0.03);
+}
+
+/* ─── Mobile ─── */
+@media (max-width: 768px) {
+  .terminal-steps {
+    flex-wrap: wrap;
+    gap: 0.3rem;
+  }
+
+  .step-indicator {
+    font-size: 0.5rem;
+    padding: 0.2rem 0.5rem;
+  }
+
+  .terminal-output {
+    font-size: 0.6rem;
+    min-height: 150px;
+    max-height: 250px;
+  }
+}

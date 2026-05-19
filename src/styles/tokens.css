@@ -1,0 +1,66 @@
+/* ═══════════════════════════════════════════════
+   DESIGN TOKENS — Nexus3D Portfolio
+   Layered monochrome palette + accent system
+   ═══════════════════════════════════════════════ */
+
+:root {
+  /* ─── Color: Layered Monochrome ─── */
+  --bg:            #050505;
+  --bg-soft:       #0a0a0a;
+  --surface:       #0f0f0f;
+  --surface-light: #161616;
+  --border:        rgba(255, 255, 255, 0.06);
+  --border-hover:  rgba(255, 255, 255, 0.12);
+
+  /* ─── Color: Text Hierarchy ─── */
+  --text:          #e8e6e1;
+  --text-secondary:#b8b6b1;
+  --muted:         rgba(232, 230, 225, 0.45);
+  --muted-strong:  rgba(232, 230, 225, 0.65);
+
+  /* ─── Color: Accents ─── */
+  --accent:        #00ff87;
+  --accent-dim:    rgba(0, 255, 135, 0.6);
+  --accent-soft:   rgba(0, 255, 135, 0.15);
+  --accent-ultra:  rgba(0, 255, 135, 0.05);
+  --accent2:       #0066ff;
+  --accent3:       #ff3c5c;
+  --glow:          rgba(0, 255, 135, 0.15);
+  --glow-strong:   rgba(0, 255, 135, 0.3);
+
+  /* ─── Typography ─── */
+  --font-display:  'Syne', sans-serif;
+  --font-mono:     'Fragment Mono', 'Space Mono', monospace;
+
+  /* ─── Spacing Scale ─── */
+  --space-xs:      0.25rem;
+  --space-sm:      0.5rem;
+  --space-md:      1rem;
+  --space-lg:      2rem;
+  --space-xl:      4rem;
+  --space-2xl:     6rem;
+  --space-3xl:     8rem;
+  --space-section: 8rem;
+  --space-gutter:  3rem;
+
+  /* ─── Z-Index Scale (Visual Hierarchy) ─── */
+  --z-bg:          0;      /* Layer 0: background canvas */
+  --z-midground:   1;      /* Layer 1: ghost text, grid */
+  --z-content:     2;      /* Layer 2: main UI content */
+  --z-fx:          3;      /* Layer 4: noise, scanlines */
+  --z-foreground:  50;     /* Layer 3: nav, overlays */
+  --z-cursor:      9998;   /* Cursor ring */
+  --z-cursor-dot:  9999;   /* Cursor dot */
+  --z-preloader:   10000;  /* Preloader (above everything) */
+
+  /* ─── Borders & Shapes ─── */
+  --radius-sm:     2px;
+  --radius-md:     4px;
+
+  /* ─── Transition defaults ─── */
+  --ease-out:      cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out:   cubic-bezier(0.65, 0, 0.35, 1);
+  --duration-fast:  0.2s;
+  --duration-med:   0.4s;
+  --duration-slow:  0.7s;
+}

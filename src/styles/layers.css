@@ -1,0 +1,273 @@
+/* ═══════════════════════════════════════════════
+   VISUAL HIERARCHY LAYERS — Nexus3D Portfolio
+
+   Layer 0 — Background:  atmospheric gradients
+   Layer 1 — Midground:   ghost text, engineering grid
+   Layer 2 — Content:     readable UI (handled per section)
+   Layer 3 — Foreground:  cursor, overlays (cursor.css)
+   Layer 4 — FX:          noise, scanlines, particles
+   ═══════════════════════════════════════════════ */
+
+/* ═══ LAYER 0: ATMOSPHERIC BACKGROUND ═══ */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-bg);
+  pointer-events: none;
+  background:
+    /* Warm atmospheric glow — top left */
+    radial-gradient(
+      ellipse 60% 50% at 15% 10%,
+      rgba(70, 70, 120, 0.18),
+      transparent 50%
+    ),
+    /* Cool ambient glow — bottom right */
+    radial-gradient(
+      ellipse 50% 60% at 85% 90%,
+      rgba(120, 120, 255, 0.06),
+      transparent 45%
+    ),
+    /* Subtle accent bleed — center */
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(0, 255, 135, 0.02),
+      transparent 60%
+    ),
+    /* Base gradient — prevents pure black flatness */
+    linear-gradient(
+      180deg,
+      #050505 0%,
+      #070707 35%,
+      #0a0a0a 70%,
+      #080808 100%
+    );
+}
+
+
+/* ═══ LAYER 1: GHOST TYPOGRAPHY ═══ */
+.ghost-text-layer {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-midground);
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.ghost-word {
+  position: absolute;
+  font-family: var(--font-display);
+  font-weight: 800;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.025);
+  letter-spacing: 0.05em;
+  line-height: 0.85;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.ghost-word--1 {
+  font-size: clamp(8rem, 18vw, 22rem);
+  top: 5%;
+  left: -5%;
+  transform: rotate(-5deg);
+}
+
+.ghost-word--2 {
+  font-size: clamp(12rem, 25vw, 30rem);
+  top: 30%;
+  right: -8%;
+  transform: rotate(3deg);
+}
+
+.ghost-word--3 {
+  font-size: clamp(6rem, 14vw, 18rem);
+  bottom: 35%;
+  left: 10%;
+  transform: rotate(-2deg);
+}
+
+.ghost-word--4 {
+  font-size: clamp(10rem, 20vw, 26rem);
+  bottom: 10%;
+  right: 5%;
+  transform: rotate(4deg);
+}
+
+.ghost-word--5 {
+  font-size: clamp(5rem, 12vw, 15rem);
+  top: 55%;
+  left: 40%;
+  transform: rotate(-8deg);
+}
+
+/* Hide ghost text on low-end devices */
+@media (max-width: 768px) {
+  .ghost-text-layer { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ghost-text-layer { display: none; }
+}
+
+
+/* ═══ LAYER 1: ENGINEERING GRID OVERLAY ═══ */
+.grid-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-midground);
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 60px 60px;
+  opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+  .grid-overlay { display: none; }
+}
+
+
+/* ═══ LAYER 4: NOISE TEXTURE ═══ */
+.noise {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-fx);
+  pointer-events: none;
+  opacity: 0.03;
+  mix-blend-mode: soft-light;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+}
+
+
+/* ═══ LAYER 4: SCANLINES ═══ */
+.scanline {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-fx);
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 3px,
+    rgba(0, 0, 0, 0.03) 3px,
+    rgba(0, 0, 0, 0.03) 4px
+  );
+  opacity: 0.35;
+}
+
+
+/* ═══ LAYER 0: PARTICLE CANVAS ═══ */
+#bg-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-bg);
+  pointer-events: none;
+}
+
+
+/* ═══ LAYER 3: CURSOR ═══ */
+#cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: var(--z-cursor-dot);
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s, width 0.2s, height 0.2s, background 0.2s;
+  will-change: transform;
+}
+
+#cursor-ring {
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--accent-dim);
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: var(--z-cursor);
+  transform: translate(-50%, -50%);
+  transition: width 0.25s var(--ease-out), height 0.25s var(--ease-out),
+              border-color 0.2s, background 0.2s, opacity 0.2s;
+  will-change: transform;
+}
+
+/* Cursor state: hovering interactive element */
+body.cursor-hover #cursor-dot {
+  width: 12px;
+  height: 12px;
+}
+body.cursor-hover #cursor-ring {
+  width: 56px;
+  height: 56px;
+  border-color: var(--accent);
+}
+
+/* Cursor state: CTA button */
+body.cursor-cta #cursor-dot {
+  width: 14px;
+  height: 14px;
+  background: var(--accent);
+  box-shadow: 0 0 20px var(--glow-strong);
+}
+body.cursor-cta #cursor-ring {
+  width: 64px;
+  height: 64px;
+  border-color: var(--accent);
+  background: var(--accent-ultra);
+}
+
+/* Cursor state: project row */
+body.cursor-project #cursor-dot {
+  width: 6px;
+  height: 6px;
+}
+body.cursor-project #cursor-ring {
+  width: 80px;
+  height: 80px;
+  border-color: var(--accent-dim);
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* Hide cursor on mobile */
+@media (max-width: 768px) {
+  #cursor-dot,
+  #cursor-ring { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #cursor-dot,
+  #cursor-ring { display: none; }
+}
+
+
+/* ═══ LAYER 2: MAIN CONTENT WRAPPER ═══ */
+main {
+  position: relative;
+  z-index: var(--z-content);
+}
+
+
+/* ═══ GLOW ZONES — Selective cinematic lighting ═══ */
+/* Applied to section titles and key headings */
+.section-title {
+  text-shadow: 0 0 80px rgba(0, 255, 135, 0.08);
+}
+
+.hero-title {
+  text-shadow: 0 0 120px rgba(0, 255, 135, 0.06);
+}
+
+.astra-title {
+  text-shadow: 0 0 100px rgba(0, 255, 135, 0.1);
+}
+
+.contact-big {
+  text-shadow: 0 0 100px rgba(0, 255, 135, 0.08);
+}

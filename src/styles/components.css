@@ -1,0 +1,99 @@
+/* ═══════════════════════════════════════════════
+   COMPONENTS — Nexus3D Portfolio
+   Buttons, tags, cards — reusable elements
+   ═══════════════════════════════════════════════ */
+
+/* ═══ BUTTONS ═══ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.9rem 1.8rem;
+  border: 1px solid;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s, box-shadow 0.3s, transform 0.2s;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  transition: transform 0.4s var(--ease-out);
+}
+
+/* Primary Button */
+.btn-primary {
+  border-color: var(--accent);
+  color: var(--bg);
+  background: var(--accent);
+}
+
+.btn-primary::before {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(-101%);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 0 30px var(--glow);
+}
+
+.btn-primary:hover::before {
+  transform: translateX(0);
+}
+
+.btn-primary:active {
+  transform: scale(0.97);
+}
+
+/* Ghost Button */
+.btn-ghost {
+  border-color: var(--border);
+  color: var(--muted);
+  background: transparent;
+}
+
+.btn-ghost::before {
+  background: var(--accent-ultra);
+  transform: translateX(-101%);
+}
+
+.btn-ghost:hover {
+  border-color: var(--text);
+  color: var(--text);
+}
+
+.btn-ghost:hover::before {
+  transform: translateX(0);
+}
+
+/* Small Button Variant */
+.btn-sm {
+  font-size: 0.6rem;
+  padding: 0.5rem 1rem;
+}
+
+
+/* ═══ TAGS ═══ */
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  transition: border-color 0.3s, color 0.3s, background 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+
+.tag:hover {
+  border-color: var(--accent-dim);
+  color: var(--text);
+  background: var(--accent-ultra);
+  box-shadow: 0 0 10px var(--glow);
+}

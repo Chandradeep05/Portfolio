@@ -1,0 +1,260 @@
+/* ═══════════════════════════════════════════════
+   HERO SECTION — Nexus3D Portfolio
+   Full-viewport cinematic intro with giant
+   typography, metadata row, and CTA buttons
+   ═══════════════════════════════════════════════ */
+
+#hero {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 var(--space-gutter) var(--space-xl);
+  position: relative;
+}
+
+/* ─── Vertical Index Label (right side) ─── */
+.hero-index {
+  position: absolute;
+  top: 50%;
+  right: var(--space-gutter);
+  transform: translateY(-50%);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  color: var(--muted);
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  opacity: 0;
+  animation: heroFadeIn 0.8s var(--ease-out) 2.2s forwards;
+}
+
+/* ─── Scroll Indicator ─── */
+.hero-scroll-line {
+  position: absolute;
+  bottom: var(--space-xl);
+  right: var(--space-gutter);
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.25em;
+  color: var(--muted);
+  opacity: 0;
+  animation: heroFadeIn 0.6s var(--ease-out) 2.6s forwards;
+}
+
+.hero-scroll-line::before {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: var(--muted);
+  animation: scrollLinePulse 2.5s ease-in-out infinite 3s;
+}
+
+@keyframes scrollLinePulse {
+  0%, 100% { width: 40px; opacity: 0.5; }
+  50% { width: 55px; opacity: 1; }
+}
+
+/* ─── Eyebrow ─── */
+.hero-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: heroReveal 0.8s var(--ease-out) 1.2s forwards;
+}
+
+/* ─── Main Title ─── */
+.hero-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2.8rem, 8.5vw, 7.5rem);
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  max-width: 95vw;
+  width: 100%;
+  word-break: keep-all;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: heroReveal 1s var(--ease-out) 1.4s forwards;
+}
+
+.hero-title .line {
+  display: block;
+  overflow: hidden;
+}
+
+.hero-title .line-accent {
+  color: var(--accent);
+}
+
+.hero-title .line-dim {
+  color: var(--muted);
+}
+
+/* ─── Hero Metadata Row ─── */
+.hero-meta {
+  margin-top: var(--space-gutter);
+  display: flex;
+  gap: var(--space-xl);
+  align-items: flex-end;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: heroReveal 0.8s var(--ease-out) 1.7s forwards;
+}
+
+.hero-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.hero-meta-label {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.hero-meta-value {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text);
+}
+
+/* ─── CTA Buttons ─── */
+.hero-cta {
+  margin-top: 3.5rem;
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: heroReveal 0.8s var(--ease-out) 1.9s forwards;
+}
+
+/* ─── Hero Keyframes ─── */
+@keyframes heroReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroFadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* ─── Preloader ─── */
+#preloader {
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  z-index: var(--z-preloader);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.7s var(--ease-out), visibility 0.7s;
+  overflow: hidden;
+}
+
+#preloader.done {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* ─── Ambient glow orbs ─── */
+.pre-ambient {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 255, 135, 0.06) 0%, transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  filter: blur(80px);
+  animation: ambientDrift 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.pre-ambient-2 {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 102, 255, 0.04) 0%, transparent 70%);
+  top: 40%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  filter: blur(60px);
+  animation: ambientDrift2 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes ambientDrift {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+  50% { transform: translate(-48%, -52%) scale(1.15); opacity: 1; }
+}
+
+@keyframes ambientDrift2 {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+  50% { transform: translate(-53%, -47%) scale(1.1); opacity: 0.8; }
+}
+
+/* ─── Logo text ─── */
+.pre-logo {
+  font-family: var(--font-mono);
+  font-size: clamp(0.7rem, 1.5vw, 0.9rem);
+  color: var(--muted);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.pre-logo span {
+  color: var(--accent);
+}
+
+.pre-bar-wrap {
+  width: 240px;
+  height: 1px;
+  background: var(--border);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.pre-bar {
+  height: 100%;
+  background: var(--accent);
+  width: 0%;
+  transition: width 0.1s linear;
+  box-shadow: 0 0 12px var(--accent), 0 0 30px var(--glow);
+}
+
+.pre-count {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--accent);
+  margin-top: 1rem;
+  letter-spacing: 0.2em;
+  position: relative;
+  z-index: 1;
+}
+

@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chandradeep Saxena — Full-Stack & AI Systems Engineer</title>
+  <meta name="description" content="Portfolio of Chandradeep Saxena — Full-Stack Engineer, AI Systems Builder, Creative Technologist. Building Astra-OS and engineering-first products."/>
+  <meta name="author" content="Chandradeep Saxena"/>
+  <meta name="robots" content="index, follow"/>
+  <meta name="theme-color" content="#050505"/>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Chandradeep Saxena — Full-Stack & AI Systems Engineer"/>
+  <meta property="og:description" content="Full-Stack Engineer, AI Systems Builder, Creative Technologist. Building Astra-OS."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:locale" content="en_US"/>
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary"/>
+  <meta name="twitter:title" content="Chandradeep Saxena — Full-Stack & AI Systems Engineer"/>
+  <meta name="twitter:description" content="Full-Stack Engineer, AI Systems Builder. Building Astra-OS."/>
+
+  <!-- Inline SVG Favicon (no external file needed) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>⚡</text></svg>"/>
+
+  <!-- Resource hints for CDN dependencies -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net"/>
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net"/>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&family=Fragment+Mono&display=swap" rel="stylesheet"/>
+
+  <!-- Styles (order matters: tokens → reset → layers → components → sections → animations → responsive) -->
+  <link rel="stylesheet" href="src/styles/tokens.css"/>
+  <link rel="stylesheet" href="src/styles/reset.css"/>
+  <link rel="stylesheet" href="src/styles/layers.css"/>
+  <link rel="stylesheet" href="src/styles/nav.css"/>
+  <link rel="stylesheet" href="src/styles/hero.css"/>
+  <link rel="stylesheet" href="src/styles/sections.css"/>
+  <link rel="stylesheet" href="src/styles/contact.css"/>
+  <link rel="stylesheet" href="src/styles/components.css"/>
+  <link rel="stylesheet" href="src/styles/animations.css"/>
+  <link rel="stylesheet" href="src/styles/responsive.css"/>
+  <link rel="stylesheet" href="src/styles/polish.css"/>
+  <link rel="stylesheet" href="src/styles/terminal.css"/>
+</head>
+<body>
+
+  <!-- SKIP LINK (Accessibility) -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- CURSOR -->
+  <div id="cursor-dot" aria-hidden="true"></div>
+  <div id="cursor-ring" aria-hidden="true"></div>
+
+  <!-- PRELOADER -->
+  <div id="preloader" role="status" aria-label="Loading portfolio">
+    <div class="pre-ambient" aria-hidden="true"></div>
+    <div class="pre-ambient-2" aria-hidden="true"></div>
+    <div class="pre-logo">CS<span>.</span>DEV // INITIALIZING SYSTEMS</div>
+    <div class="pre-bar-wrap"><div class="pre-bar" id="pre-bar"></div></div>
+    <div class="pre-count" id="pre-count">000</div>
+  </div>
+
+  <!-- VISUAL LAYERS (Layer 0-1: Background + Midground) -->
+  <div class="noise" aria-hidden="true"></div>
+  <div class="scanline" aria-hidden="true"></div>
+  <div class="grid-overlay" aria-hidden="true"></div>
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <!-- GHOST TYPOGRAPHY (Layer 1: Midground) -->
+  <div class="ghost-text-layer" aria-hidden="true">
+    <div class="ghost-word ghost-word--1">SYSTEMS</div>
+    <div class="ghost-word ghost-word--2">AI</div>
+    <div class="ghost-word ghost-word--3">ENGINEERING</div>
+    <div class="ghost-word ghost-word--4">ASTRA</div>
+    <div class="ghost-word ghost-word--5">INTERFACE</div>
+  </div>
+
+  <!-- NAV -->
+  <nav role="navigation" aria-label="Main navigation">
+    <a href="#" class="nav-logo">CHANDRADEEP SAXENA</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#astra">Astra-OS</a></li>
+      <li><a href="#timeline">Timeline</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-status">
+      <div class="status-dot" aria-hidden="true"></div>
+      OPEN TO INTERNSHIP
+    </div>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main id="main-content">
+
+    <!-- ─── HERO ─── -->
+    <section id="hero" aria-label="Introduction">
+      <div class="hero-index" aria-hidden="true">FULL-STACK // AI-SYSTEMS // CREATIVE-TECH</div>
+      <div class="hero-eyebrow">Chandradeep Saxena — B.Tech IT, GTBIT Delhi</div>
+      <h1 class="hero-title" data-animation="hero-title">
+        <span class="line" data-animation="line">Full-Stack</span>
+        <span class="line line-accent glitch" data-text="Engineer" data-animation="line">Engineer</span>
+        <span class="line line-dim" data-animation="line">& AI Builder</span>
+      </h1>
+      <div class="hero-meta">
+        <div class="hero-meta-item">
+          <span class="hero-meta-label">Location</span>
+          <span class="hero-meta-value">Delhi, India</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="hero-meta-label">CGPA</span>
+          <span class="hero-meta-value">8.44 / 10</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="hero-meta-label">Status</span>
+          <span class="hero-meta-value" style="color:var(--accent)">Available</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="hero-meta-label">Focus</span>
+          <span class="hero-meta-value">Astra-OS MVP</span>
+        </div>
+      </div>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary" data-cursor="cta">View Work →</a>
+        <a href="#contact" class="btn btn-ghost" data-cursor="cta">Get In Touch</a>
+        <a href="mailto:c4chandradeep2005@gmail.com" class="btn btn-ghost" data-cursor="cta">c4chandradeep2005@gmail.com</a>
+      </div>
+      <div class="hero-scroll-line" aria-hidden="true">SCROLL</div>
+    </section>
+
+    <!-- ─── ABOUT ─── -->
+    <section id="about" aria-label="About">
+      <div class="section-header reveal">
+        <span class="section-num">01</span>
+        <h2 class="section-title" data-animation="section-title">About</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-statement reveal reveal-delay-1">
+          B.Tech IT student at GTBIT Delhi — <strong>building systems that think.</strong>
+          Currently deep in the architecture of <strong>Astra-OS</strong>, a fully local, privacy-first AI OS with agentic workflows, vector memory, and multi-LLM orchestration.
+          <br/><br/>
+          I build at the intersection of <strong>full-stack engineering</strong> and <strong>AI systems design</strong> — where backends have to be fast, frontends have to be honest, and the agent loop has to be right.
+        </div>
+        <div class="about-right reveal reveal-delay-2">
+          <div class="skills-group">
+            <div class="skills-group-label">Languages</div>
+            <div class="skills-tags">
+              <span class="tag">Python</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">C++</span>
+              <span class="tag">HTML5</span>
+              <span class="tag">CSS3</span>
+            </div>
+          </div>
+          <div class="skills-group">
+            <div class="skills-group-label">Frontend / Backend</div>
+            <div class="skills-tags">
+              <span class="tag">Next.js</span>
+              <span class="tag">React</span>
+              <span class="tag">Tailwind CSS</span>
+              <span class="tag">FastAPI</span>
+              <span class="tag">Flask</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">REST APIs</span>
+            </div>
+          </div>
+          <div class="skills-group">
+            <div class="skills-group-label">AI / LLM</div>
+            <div class="skills-tags">
+              <span class="tag">Ollama</span>
+              <span class="tag">WebLLM</span>
+              <span class="tag">LangChain</span>
+              <span class="tag">ChromaDB</span>
+              <span class="tag">Prompt Engineering</span>
+            </div>
+          </div>
+          <div class="skills-group">
+            <div class="skills-group-label">Databases & Tools</div>
+            <div class="skills-tags">
+              <span class="tag">MySQL</span>
+              <span class="tag">SQL</span>
+              <span class="tag">Git</span>
+              <span class="tag">GitHub</span>
+              <span class="tag">Postman</span>
+              <span class="tag">VS Code</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── PROJECTS ─── -->
+    <section id="projects" aria-label="Projects">
+      <div class="section-header reveal">
+        <span class="section-num">02</span>
+        <h2 class="section-title" data-animation="section-title">Projects</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="projects-list reveal">
+
+        <!-- Astra-OS -->
+        <div class="project-row" role="button" tabindex="0" aria-expanded="false" data-cursor="project" data-project-name="ASTRA-OS">
+          <div class="project-num">001</div>
+          <div class="project-title">Astra-OS</div>
+          <div class="project-stack">
+            <span class="tag">FastAPI</span>
+            <span class="tag">Next.js</span>
+            <span class="tag">ChromaDB</span>
+            <span class="tag">Ollama</span>
+            <span class="tag">WebLLM</span>
+          </div>
+          <div class="project-year">2025 – Present</div>
+          <div class="project-arrow">→</div>
+        </div>
+        <div class="project-detail">
+          <div class="detail-grid">
+            <div>
+              <div class="detail-description">
+                <strong>Local-first personal AI operating system</strong> with a fully agentic architecture. Privacy-first: everything runs on-device with no cloud dependency. Built around the OTPAR loop (Observe → Think → Plan → Act → Reflect) for robust, self-correcting task execution.
+              </div>
+              <div class="detail-links">
+                <span class="btn btn-ghost btn-sm" style="cursor:default;">Private Repo — Available on Request</span>
+              </div>
+            </div>
+            <div class="detail-highlights">
+              <div class="detail-highlight">FastAPI backend with modular tool-calling architecture</div>
+              <div class="detail-highlight">ChromaDB vector memory for persistent contextual recall</div>
+              <div class="detail-highlight">OTPAR agent loop with reflection-based retry handling</div>
+              <div class="detail-highlight">Next.js frontend with real-time streaming responses</div>
+              <div class="detail-highlight">Plug-in system for extensibility across agent tools</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hospital -->
+        <div class="project-row" role="button" tabindex="0" aria-expanded="false" data-cursor="project" data-project-name="HOSPITAL-SYS">
+          <div class="project-num">002</div>
+          <div class="project-title">Hospital Staff Management System</div>
+          <div class="project-stack">
+            <span class="tag">Flask</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">Python</span>
+            <span class="tag">HTML/CSS</span>
+          </div>
+          <div class="project-year">2025</div>
+          <div class="project-arrow">→</div>
+        </div>
+        <div class="project-detail">
+          <div class="detail-grid">
+            <div>
+              <div class="detail-description">
+                Full-stack hospital web application with <strong>CRUD operations</strong>, secure authentication, and role-based access control. Integrated MySQL for patient and staff records with a responsive UI featuring search and filtering.
+              </div>
+              <div class="detail-links">
+                <a href="https://hospital-1-8ttx.onrender.com" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">Live →</a>
+                <a href="https://github.com/Chandradeep05/HOSPITAL" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">GitHub →</a>
+              </div>
+            </div>
+            <div class="detail-highlights">
+              <div class="detail-highlight">Secure auth with role-based access control</div>
+              <div class="detail-highlight">MySQL integration for patient & staff records</div>
+              <div class="detail-highlight">Responsive UI with search and filtering</div>
+              <div class="detail-highlight">Full CRUD workflow across all entities</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- KBC -->
+        <div class="project-row" role="button" tabindex="0" aria-expanded="false" data-cursor="project" data-project-name="KBC-QUIZ">
+          <div class="project-num">003</div>
+          <div class="project-title">KBC Quiz Game Web App</div>
+          <div class="project-stack">
+            <span class="tag">Flask</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Python</span>
+            <span class="tag">HTML/CSS</span>
+          </div>
+          <div class="project-year">2024</div>
+          <div class="project-arrow">→</div>
+        </div>
+        <div class="project-detail">
+          <div class="detail-grid">
+            <div>
+              <div class="detail-description">
+                Timer-based interactive quiz platform inspired by KBC. Dynamic question flow, real-time score tracking, and optimised backend logic. Fully responsive for cross-device gameplay.
+              </div>
+              <div class="detail-links">
+                <a href="https://kbc-quiz-game-kkk0.onrender.com" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">Live →</a>
+                <a href="https://github.com/Chandradeep05/KBC-Quiz-game" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">GitHub →</a>
+              </div>
+            </div>
+            <div class="detail-highlights">
+              <div class="detail-highlight">Timer-based question engine with dynamic flow</div>
+              <div class="detail-highlight">Real-time score tracking and state management</div>
+              <div class="detail-highlight">Responsive cross-device UI</div>
+              <div class="detail-highlight">Optimised Flask backend for low-latency responses</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── ASTRA-OS DEEP DIVE ─── -->
+    <section id="astra" aria-label="Astra-OS deep dive">
+      <div class="section-header reveal">
+        <span class="section-num">03</span>
+        <h2 class="section-title" data-animation="section-title">Astra-OS</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="astra-grid">
+        <div class="astra-diagram reveal">
+          <div class="arch-node">User Interface — Next.js Frontend</div>
+          <div class="arch-arrow">↕ Streaming WebSocket / SSE</div>
+          <div class="arch-node highlight">FastAPI Backend — Tool-Calling Architecture</div>
+          <div class="arch-arrow">↕ OTPAR Agent Loop</div>
+          <div class="arch-node arch-node--grid">
+            <span>Observe</span>
+            <span>Think</span>
+            <span>Plan</span>
+            <span>Act</span>
+          </div>
+          <div class="arch-arrow arch-arrow--reflect">↕ Reflect + Retry</div>
+          <div class="arch-node arch-node--grid arch-node--2col">
+            <span>Ollama LLM</span>
+            <span>WebLLM</span>
+          </div>
+          <div class="arch-arrow">↕ Embeddings + Retrieval</div>
+          <div class="arch-node highlight">ChromaDB — Vector Memory Store</div>
+        </div>
+        <div class="astra-right">
+          <div>
+            <div class="astra-title"><span>Astra</span>-OS<br/>MVP</div>
+          </div>
+          <p class="astra-desc">
+            A local-first personal AI operating system. No cloud. No surveillance. Every inference runs on-device. Astra-OS gives you a persistent, reflective AI agent that knows your history, reasons over your tasks, and builds context over time.
+          </p>
+          <div>
+            <div class="skills-group-label">OTPAR Agent Loop</div>
+            <div class="loop-pills">
+              <span class="loop-pill">Observe</span>
+              <span class="loop-pill">Think</span>
+              <span class="loop-pill">Plan</span>
+              <span class="loop-pill">Act</span>
+              <span class="loop-pill">Reflect</span>
+            </div>
+          </div>
+          <div class="astra-features reveal">
+            <div class="feature-item">
+              <div class="feature-icon">⚡</div>
+              <div class="feature-text">
+                <div class="feature-title">Modular Tool Architecture</div>
+                <div class="feature-desc">FastAPI backend with structured tool-calling enabling composable agent execution across arbitrary task types.</div>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">🧠</div>
+              <div class="feature-text">
+                <div class="feature-title">Vector Memory</div>
+                <div class="feature-desc">ChromaDB-powered persistent contextual recall — the agent remembers and retrieves across sessions.</div>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">🔄</div>
+              <div class="feature-text">
+                <div class="feature-title">Reflection-Based Retry</div>
+                <div class="feature-desc">Self-correcting task execution via the Reflect step — the agent audits its own output and retries on failure.</div>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">🔒</div>
+              <div class="feature-text">
+                <div class="feature-title">Fully Local — Privacy First</div>
+                <div class="feature-desc">Runs on Ollama and WebLLM. Zero cloud dependency. Your data never leaves your device.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ASTRA NEURAL INTERFACE TERMINAL -->
+      <div class="astra-terminal" id="astra-terminal" role="region" aria-label="Astra-OS live demo terminal">
+        <div class="terminal-topbar">
+          <div class="terminal-dots">
+            <div class="terminal-dot terminal-dot--red"></div>
+            <div class="terminal-dot terminal-dot--yellow"></div>
+            <div class="terminal-dot terminal-dot--green"></div>
+          </div>
+          <div class="terminal-title">ASTRA-OS v0.9 — NEURAL INTERFACE</div>
+        </div>
+        <div class="terminal-steps">
+          <div class="step-indicator" data-step="observe">Observe</div>
+          <div class="step-indicator" data-step="think">Think</div>
+          <div class="step-indicator" data-step="plan">Plan</div>
+          <div class="step-indicator" data-step="act">Act</div>
+          <div class="step-indicator" data-step="reflect">Reflect</div>
+        </div>
+        <div class="terminal-output" aria-live="polite"></div>
+        <div class="terminal-input" role="button" tabindex="0">> click to start agent demo...</div>
+        <div class="terminal-status">AGENT IDLE — AWAITING INPUT</div>
+      </div>
+
+    </section>
+
+    <!-- ─── TIMELINE ─── -->
+    <section id="timeline" aria-label="Experience and education timeline">
+      <div class="section-header reveal">
+        <span class="section-num">04</span>
+        <h2 class="section-title" data-animation="section-title">Timeline</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="timeline-list">
+        <div class="timeline-item reveal">
+          <div class="timeline-date">2025 –<br/>Present</div>
+          <div class="timeline-content">
+            <div class="timeline-role">Building Astra-OS</div>
+            <div class="timeline-org">Independent — Late-Stage MVP</div>
+            <div class="timeline-bullets">
+              <div class="timeline-bullet">Architecting a local-first AI OS with FastAPI, Next.js, ChromaDB, Ollama, and WebLLM</div>
+              <div class="timeline-bullet">Designing the OTPAR agentic loop with reflection-based self-correction</div>
+              <div class="timeline-bullet">Target: market-ready, standout product</div>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item reveal reveal-delay-1">
+          <div class="timeline-date">Aug 2024 –<br/>Present</div>
+          <div class="timeline-content">
+            <div class="timeline-role">Class Representative — IT Dept.</div>
+            <div class="timeline-org">GTBIT Delhi (GGSIPU)</div>
+            <div class="timeline-bullets">
+              <div class="timeline-bullet">Primary liaison between 60+ students and faculty</div>
+              <div class="timeline-bullet">Managed announcements, grievances, and departmental coordination</div>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item reveal reveal-delay-2">
+          <div class="timeline-date">Aug 2024 –<br/>Present</div>
+          <div class="timeline-content">
+            <div class="timeline-role">Web & Management — IIC</div>
+            <div class="timeline-org">Institute Innovation Council, GTBIT</div>
+            <div class="timeline-bullets">
+              <div class="timeline-bullet">Organised Xenothon — onboarded Beeceptor, DoraHacks, and 11 more sponsors for the event</div>
+              <div class="timeline-bullet">Managed on-ground operations for a 24-hour campus tech event</div>
+              <div class="timeline-bullet">Coordinated international conference logistics for 3 student delegates from Poland</div>
+              <div class="timeline-bullet">Managed website content and digital outreach for institutional initiatives</div>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item reveal reveal-delay-3">
+          <div class="timeline-date">2024 –<br/>2028</div>
+          <div class="timeline-content">
+            <div class="timeline-role">B.Tech — Information Technology</div>
+            <div class="timeline-org">GTBIT (GGSIPU) — CGPA 8.44 / 10</div>
+            <div class="timeline-bullets">
+              <div class="timeline-bullet">Circuits & Systems, Data Structures, OOP, Network Theory</div>
+              <div class="timeline-bullet">Active in IIC, Class Representative from first year</div>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-date">2023</div>
+          <div class="timeline-content">
+            <div class="timeline-role">Class XII — CBSE</div>
+            <div class="timeline-org">Veer Public School, Delhi — 86.6%</div>
+            <div class="timeline-bullets">
+              <div class="timeline-bullet">Batch Topper — 2nd Position with 86.6% aggregate</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── CERTIFICATIONS ─── -->
+    <section id="certs" aria-label="Certifications and achievements">
+      <div class="section-header reveal">
+        <span class="section-num">05</span>
+        <h2 class="section-title" data-animation="section-title">Credentials</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="certs-grid">
+        <div class="cert-card reveal">
+          <div class="cert-issuer">Deloitte × Forage</div>
+          <div class="cert-name">Data Analytics Job Simulation</div>
+        </div>
+        <div class="cert-card reveal reveal-delay-1">
+          <div class="cert-issuer">IIT Bombay — Spoken Tutorial</div>
+          <div class="cert-name">Python Programming</div>
+          <div class="cert-score">Score: 85%</div>
+        </div>
+        <div class="cert-card reveal reveal-delay-2">
+          <div class="cert-issuer">IIT Bombay — Spoken Tutorial</div>
+          <div class="cert-name">C++ Programming</div>
+          <div class="cert-score">Score: 80%</div>
+        </div>
+        <div class="cert-card reveal reveal-delay-3">
+          <div class="cert-issuer">Academic Achievement</div>
+          <div class="cert-name">Batch Topper — 2nd Position, Class XII CBSE</div>
+          <div class="cert-score">86.6% — Veer Public School, Delhi</div>
+        </div>
+        <div class="cert-card reveal">
+          <div class="cert-issuer">Open Source</div>
+          <div class="cert-name">GitHub — Active Contributor</div>
+          <div class="cert-score"><a href="https://github.com/Chandradeep05" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;">github.com/Chandradeep05</a></div>
+        </div>
+        <div class="cert-card reveal reveal-delay-1">
+          <div class="cert-issuer">Leadership</div>
+          <div class="cert-name">Organised Xenothon — 24hr Hackathon</div>
+          <div class="cert-score">Sponsored by Beeceptor, DoraHacks, and 11 more sponsors</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── CONTACT ─── -->
+    <section id="contact" aria-label="Contact">
+      <div class="section-header reveal">
+        <span class="section-num">06</span>
+        <h2 class="section-title" data-animation="section-title">Contact</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-left reveal">
+          <div class="contact-big">Let's<br/><span>Build</span><br/>Together</div>
+          <p class="contact-tagline">Open to internships, freelance projects, collaborations, and interesting problems. If you're building something that matters, let's talk.</p>
+          <div class="contact-links">
+            <a href="mailto:c4chandradeep2005@gmail.com" class="contact-link">
+              <span>Email</span> c4chandradeep2005@gmail.com
+            </a>
+            <a href="tel:+919650375029" class="contact-link">
+              <span>Phone</span> +91-9650375029
+            </a>
+            <a href="https://github.com/Chandradeep05" target="_blank" rel="noopener" class="contact-link">
+              <span>GitHub</span> github.com/Chandradeep05
+            </a>
+            <a href="https://www.linkedin.com/in/chandradeep-saxena-8b939a310/" target="_blank" rel="noopener" class="contact-link">
+              <span>LinkedIn</span> linkedin.com/in/chandradeep-saxena
+            </a>
+          </div>
+        </div>
+        <div class="contact-right reveal reveal-delay-1">
+          <form class="contact-form" aria-label="Contact form" id="contact-form">
+            <div class="form-group">
+              <label class="form-label" for="cf-name">Your Name</label>
+              <input class="form-input" id="cf-name" type="text" placeholder="Jane Smith" autocomplete="name" required/>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="cf-email">Email</label>
+              <input class="form-input" id="cf-email" type="email" placeholder="jane@company.com" autocomplete="email" required/>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="cf-msg">Message</label>
+              <textarea class="form-textarea" id="cf-msg" placeholder="Tell me about the opportunity…" required></textarea>
+            </div>
+            <button type="submit" class="form-submit" data-cursor="cta">
+              Send Message →
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-copy">© 2025 Chandradeep Saxena — All rights reserved</div>
+    <div class="footer-right">Built with <span>♥</span> + WebGL + Vanilla JS — Nexus<span>3D</span></div>
+  </footer>
+
+  <!-- CDN Dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+
+  <!-- App Scripts (order matters) -->
+  <script src="src/utils/math.js"></script>
+  <script src="src/utils/dom.js"></script>
+  <script src="src/scripts/state.js"></script>
+  <script src="src/scripts/performance.js"></script>
+  <script src="src/animations/motion.js"></script>
+  <script src="src/scripts/preloader.js"></script>
+  <script src="src/scripts/cursor.js"></script>
+  <script src="src/scripts/scroll.js"></script>
+  <script src="src/scripts/nav.js"></script>
+  <script src="src/particles/config.js"></script>
+  <script src="src/particles/engine.js"></script>
+  <script src="src/animations/typography.js"></script>
+  <script src="src/animations/magnetic.js"></script>
+  <script src="src/animations/sections.js"></script>
+  <script src="src/scripts/projects.js"></script>
+  <script src="src/scripts/form.js"></script>
+  <script src="src/scripts/terminal.js"></script>
+  <script src="src/scripts/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,122 @@
+/* ═══════════════════════════════════════════════
+   NAVIGATION — Nexus3D Portfolio
+   Fixed top bar with logo, links, status indicator
+   ═══════════════════════════════════════════════ */
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-foreground);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.8rem var(--space-gutter);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background: rgba(5, 5, 5, 0.4);
+}
+
+nav::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: var(--space-gutter);
+  right: var(--space-gutter);
+  height: 1px;
+  background: var(--border);
+}
+
+/* ─── Logo ─── */
+.nav-logo {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--text);
+  transition: color var(--duration-fast);
+}
+
+.nav-logo span {
+  color: var(--accent);
+}
+
+.nav-logo:hover {
+  color: var(--accent);
+}
+
+/* ─── Links ─── */
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.nav-links a {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  position: relative;
+  transition: color var(--duration-fast);
+  padding-bottom: 4px;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--accent);
+  transition: width 0.3s var(--ease-out);
+}
+
+.nav-links a:hover {
+  color: var(--text);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Active nav link state (set by JS) */
+.nav-links a.active {
+  color: var(--text);
+}
+
+.nav-links a.active::after {
+  width: 100%;
+}
+
+/* ─── Status Indicator ─── */
+.nav-status {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: statusPulse 2s ease-in-out infinite;
+}
+
+@keyframes statusPulse {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 var(--glow);
+  }
+  50% {
+    opacity: 0.6;
+    box-shadow: 0 0 0 6px transparent;
+  }
+}
