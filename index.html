@@ -86,6 +86,7 @@
       <li><a href="#about">About</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#astra">Astra-OS</a></li>
+      <li><a href="#arth">ARTH</a></li>
       <li><a href="#timeline">Timeline</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -449,7 +450,7 @@
             <div class="terminal-dot terminal-dot--yellow"></div>
             <div class="terminal-dot terminal-dot--green"></div>
           </div>
-          <div class="terminal-title">ASTRA-OS v0.9 — NEURAL INTERFACE</div>
+          <div class="terminal-title">ASTRA-OS v0.9 — NEURAL INTERFACE (DEMO SIMULATION)</div>
         </div>
         <div class="terminal-steps">
           <div class="step-indicator" data-step="observe">Observe</div>
@@ -459,8 +460,124 @@
           <div class="step-indicator" data-step="reflect">Reflect</div>
         </div>
         <div class="terminal-output" aria-live="polite"></div>
-        <div class="terminal-input" role="button" tabindex="0">> click to start agent demo...</div>
+        <div class="terminal-input" role="button" tabindex="0">> click to start agent loop (demo simulation)...</div>
         <div class="terminal-status">AGENT IDLE — AWAITING INPUT</div>
+      </div>
+
+    </section>
+
+    <!-- ─── ARTH DEEP DIVE ─── -->
+    <section id="arth" aria-label="ARTH deep dive">
+      <div class="section-header reveal">
+        <span class="section-num">04</span>
+        <h2 class="section-title" data-animation="section-title">ARTH</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="astra-grid">
+        <div class="astra-diagram reveal">
+          <div class="arch-node">User Interface — Next.js 16 Web App</div>
+          <div class="arch-arrow">↕ Server-Sent Events (SSE)</div>
+          <div class="arch-node highlight">FastAPI Backend — Analysis & AI Orchestration</div>
+          <div class="arch-arrow">↕ Groq API (LLaMA 3.3 70B)</div>
+          <div class="arch-node arch-node--grid">
+            <span>Groq LLaMA</span>
+            <span>Local Ollama</span>
+          </div>
+          <div class="arch-arrow arch-arrow--reflect">↕ Cache & Circuit-Breaker State</div>
+          <div class="arch-node highlight">Redis Cluster — TTL Cache Store</div>
+          <div class="arch-arrow">↕ Technical Indicators Engine</div>
+          <div class="arch-node arch-node--grid arch-node--2col">
+            <span>TradingView Charting</span>
+            <span>Market Data Feeds</span>
+          </div>
+        </div>
+        <div class="astra-right">
+          <div>
+            <div class="astra-title"><span>ARTH</span><br/>MVP</div>
+          </div>
+          <p class="astra-desc">
+            An institutional-grade financial intelligence platform. ARTH ingests real-time market feeds, runs a multi-indicator technical analysis engine, and leverages LLaMA 3.3 70B with highly structured prompt guardrails to generate streaming, hallucination-resistant stock reports via Server-Sent Events (SSE).
+          </p>
+          <div>
+            <div class="skills-group-label">Quant & AI Pipeline</div>
+            <div class="loop-pills">
+              <span class="loop-pill">Fetch Feed</span>
+              <span class="loop-pill">Compute Stats</span>
+              <span class="loop-pill">AI Stream</span>
+              <span class="loop-pill">Redis Cache</span>
+            </div>
+          </div>
+          <div class="astra-features reveal">
+            <div class="feature-item">
+              <div class="feature-icon">📈</div>
+              <div class="feature-text">
+                <div class="feature-title">Real-time SSE Streams</div>
+                <div class="feature-desc">AI-generated stock research reports streamed with zero buffering using Server-Sent Events (SSE) directly to the user interface.</div>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">📊</div>
+              <div class="feature-text">
+                <div class="feature-title">Technical Indicators Engine</div>
+                <div class="feature-desc">Low-latency calculation of RSI, MACD, Bollinger Bands, and VWAP metrics to drive quantitative risk scoring.</div>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">⚡</div>
+              <div class="feature-text">
+                <div class="feature-title">Redis Caching & Resiliency</div>
+                <div class="feature-desc">Under-load stability achieved via circuit-breaker patterns and aggressive TTL caching for high-frequency market queries.</div>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">🛡️</div>
+              <div class="feature-text">
+                <div class="feature-title">Hallucination Guardrails</div>
+                <div class="feature-desc">Groq LLaMA 3.3 70B interface governed by strict prompt constraints and structured outputs, with a local Ollama fallback for robust offline execution.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ARTH INTERFACE SHOWCASE -->
+      <div class="arth-showcase reveal">
+        <div class="showcase-header">
+          <div class="showcase-indicator">INTERFACE SYSTEM</div>
+          <h3 class="showcase-title">ARTH Intelligence Dashboard</h3>
+        </div>
+        <div class="showcase-grid">
+          <div class="showcase-item" data-cursor="hover">
+            <div class="showcase-img-wrapper">
+              <img src="src/assets/arth_dashboard.png" alt="ARTH main analytics dashboard" class="showcase-img" />
+            </div>
+            <div class="showcase-caption">
+              <span class="showcase-tag">01 / DASHBOARD</span>
+              <h4>Real-Time Overview</h4>
+              <p>Global indexes (NIFTY 50, SENSEX, S&P 500, NASDAQ) and sectoral heatmaps.</p>
+            </div>
+          </div>
+          <div class="showcase-item" data-cursor="hover">
+            <div class="showcase-img-wrapper">
+              <img src="src/assets/arth_markets.png" alt="ARTH technical charting interface" class="showcase-img" />
+            </div>
+            <div class="showcase-caption">
+              <span class="showcase-tag">02 / CHARTING</span>
+              <h4>Candlestick Charting</h4>
+              <p>Real-time price tracking of individual equities (e.g. RELIANCE.NS) and technical trends.</p>
+            </div>
+          </div>
+          <div class="showcase-item" data-cursor="hover">
+            <div class="showcase-img-wrapper">
+              <img src="src/assets/arth_indicators.png" alt="ARTH technical analysis indicator gauges" class="showcase-img" />
+            </div>
+            <div class="showcase-caption">
+              <span class="showcase-tag">03 / QUANT METRICS</span>
+              <h4>Technical Gauges</h4>
+              <p>Low-latency indicators (RSI, MACD, Bollinger Bands) alongside composite AI risk index.</p>
+            </div>
+          </div>
+        </div>
       </div>
 
     </section>
@@ -468,7 +585,7 @@
     <!-- ─── TIMELINE ─── -->
     <section id="timeline" aria-label="Experience and education timeline">
       <div class="section-header reveal">
-        <span class="section-num">04</span>
+        <span class="section-num">05</span>
         <h2 class="section-title" data-animation="section-title">Timeline</h2>
         <div class="section-line"></div>
       </div>
@@ -537,7 +654,7 @@
     <!-- ─── CERTIFICATIONS ─── -->
     <section id="certs" aria-label="Certifications and achievements">
       <div class="section-header reveal">
-        <span class="section-num">05</span>
+        <span class="section-num">06</span>
         <h2 class="section-title" data-animation="section-title">Credentials</h2>
         <div class="section-line"></div>
       </div>
@@ -577,7 +694,7 @@
     <!-- ─── CONTACT ─── -->
     <section id="contact" aria-label="Contact">
       <div class="section-header reveal">
-        <span class="section-num">06</span>
+        <span class="section-num">07</span>
         <h2 class="section-title" data-animation="section-title">Contact</h2>
         <div class="section-line"></div>
       </div>

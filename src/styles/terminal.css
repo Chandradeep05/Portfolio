@@ -73,28 +73,32 @@
 }
 
 /* Observe = cyan, Think = blue, Plan = purple, Act = green, Reflect = orange */
-.step-indicator[data-step="observe"].active {
+.step-indicator[data-step="observe"].active,
+.step-indicator[data-step="fetch"].active {
   border-color: #00d4ff;
   color: #00d4ff;
   background: rgba(0, 212, 255, 0.06);
   box-shadow: 0 0 15px rgba(0, 212, 255, 0.15);
 }
 
-.step-indicator[data-step="think"].active {
+.step-indicator[data-step="think"].active,
+.step-indicator[data-step="compute"].active {
   border-color: #4488ff;
   color: #4488ff;
   background: rgba(68, 136, 255, 0.06);
   box-shadow: 0 0 15px rgba(68, 136, 255, 0.15);
 }
 
-.step-indicator[data-step="plan"].active {
+.step-indicator[data-step="plan"].active,
+.step-indicator[data-step="ai_stream"].active {
   border-color: #a855f7;
   color: #a855f7;
   background: rgba(168, 85, 247, 0.06);
   box-shadow: 0 0 15px rgba(168, 85, 247, 0.15);
 }
 
-.step-indicator[data-step="act"].active {
+.step-indicator[data-step="act"].active,
+.step-indicator[data-step="cache"].active {
   border-color: var(--accent);
   color: var(--accent);
   background: var(--accent-ultra);
@@ -151,10 +155,14 @@
 }
 
 /* Phase colors for prefixes */
-.terminal-line--observe .terminal-prefix { color: #00d4ff; }
-.terminal-line--think .terminal-prefix { color: #4488ff; }
-.terminal-line--plan .terminal-prefix { color: #a855f7; }
-.terminal-line--act .terminal-prefix { color: var(--accent); }
+.terminal-line--observe .terminal-prefix,
+.terminal-line--fetch .terminal-prefix { color: #00d4ff; }
+.terminal-line--think .terminal-prefix,
+.terminal-line--compute .terminal-prefix { color: #4488ff; }
+.terminal-line--plan .terminal-prefix,
+.terminal-line--ai_stream .terminal-prefix { color: #a855f7; }
+.terminal-line--act .terminal-prefix,
+.terminal-line--cache .terminal-prefix { color: var(--accent); }
 .terminal-line--reflect .terminal-prefix { color: #ff8c42; }
 
 /* Result lines — accent highlighted */

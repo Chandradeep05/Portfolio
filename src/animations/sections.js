@@ -94,44 +94,43 @@ const SectionTransitions = {
      Astra-OS architecture nodes reveal top-to-bottom
      with connections animating between them */
   _archDiagramReveal() {
-    const diagram = DOM.qs('.astra-diagram');
-    if (!diagram) return;
+    const diagrams = DOM.qsa('.astra-diagram');
+    if (diagrams.length === 0) return;
 
-    const nodes = DOM.qsa('.arch-node', diagram);
-    const arrows = DOM.qsa('.arch-arrow', diagram);
+    diagrams.forEach(diagram => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: diagram,
+          start: 'top 75%',
+          toggleActions: 'play none none none'
+        }
+      });
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: diagram,
-        start: 'top 75%',
-        toggleActions: 'play none none none'
-      }
-    });
-
-    // Reveal nodes and arrows alternately, top to bottom
-    const children = [...diagram.children];
-    children.forEach((child, i) => {
-      if (child.classList.contains('arch-node')) {
-        tl.fromTo(child,
-          { opacity: 0, y: 15, scale: 0.95 },
-          {
-            opacity: 1, y: 0, scale: 1,
-            duration: MOTION.fast,
-            ease: MOTION.ease.out
-          },
-          i * 0.1
-        );
-      } else if (child.classList.contains('arch-arrow')) {
-        tl.fromTo(child,
-          { opacity: 0 },
-          {
-            opacity: 1,
-            duration: MOTION.fast,
-            ease: MOTION.ease.out
-          },
-          i * 0.1
-        );
-      }
+      // Reveal nodes and arrows alternately, top to bottom
+      const children = [...diagram.children];
+      children.forEach((child, i) => {
+        if (child.classList.contains('arch-node')) {
+          tl.fromTo(child,
+            { opacity: 0, y: 15, scale: 0.95 },
+            {
+              opacity: 1, y: 0, scale: 1,
+              duration: MOTION.fast,
+              ease: MOTION.ease.out
+            },
+            i * 0.1
+          );
+        } else if (child.classList.contains('arch-arrow')) {
+          tl.fromTo(child,
+            { opacity: 0 },
+            {
+              opacity: 1,
+              duration: MOTION.fast,
+              ease: MOTION.ease.out
+            },
+            i * 0.1
+          );
+        }
+      });
     });
   },
 
