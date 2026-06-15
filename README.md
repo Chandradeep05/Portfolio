@@ -6,17 +6,21 @@
   <img src="https://img.shields.io/badge/Framework-Vanilla_JS_%2B_GSAP-ff3c5c?style=for-the-badge" alt="Vanilla + GSAP">
 </p>
 
+> **🌐 Live:** [portfolio-eta-ochre-24.vercel.app](https://portfolio-eta-ochre-24.vercel.app)
+
+<p align="center">
+  <img src="src/assets/portfolio_preview.png" alt="Portfolio Preview Showcase" width="100%">
+</p>
+
 ---
 
 ## 🌌 Overview
 
-**Nexus3D** is a premium, highly cinematic interactive portfolio designed for **Chandradeep Saxena** — Full-Stack & AI Systems Developer. 
-
-Built with zero frameworks, zero bundlers, and zero build steps. It is a testament to pure engineering performance and visual storytelling, utilizing **WebGL**, **custom physics particles**, **GSAP scroll triggers**, and **atmospheric effects** (noise, scanlines, and glow layers).
+**Nexus3D** is a premium, highly cinematic interactive portfolio built with **zero frameworks, zero bundlers, and zero build steps** for maximum control and raw performance. Designed for **Chandradeep Saxena** — Full-Stack & AI Systems Developer — it stands as a testament to pure client-side engineering and visual storytelling, utilizing **WebGL**, **custom physics particles**, **GSAP scroll triggers**, and **atmospheric effects** (noise, scanlines, and glow layers).
 
 ---
 
-## ⚡ MVPs & Core Features
+## ⚡ Projects Showcased
 
 ### 1. Astra-OS — Local-First Personal AI OS
 A fully offline, agentic OS running entirely in the client with zero cloud dependency. Built on top of the **OTPAR Loop** (Observe → Think → Plan → Act → Reflect) for self-correcting task execution.
@@ -29,27 +33,20 @@ An institutional-grade quant and research platform delivering low-latency financ
 *   **Technical Indicators Engine**: Calculates RSI, MACD, Bollinger Bands, and VWAP metrics.
 *   **SSE Streams**: Delivers real-time AI stock reports via Server-Sent Events with zero buffering.
 *   **Resiliency Layer**: Implements circuit-breaker patterns and aggressive Redis TTL caching under high request volume.
-*   **Quant Terminal Simulator**: Interactive pipeline typing out real-time market queries, risk scoring, and streaming analysis.
+*   **Quant Dashboard Showcase**: High-fidelity UI screenshots showcasing indicators, sentiment analysis, candlestick charts, and risk indexes.
 
 ---
 
 ## 📐 Architecture & Visual Layers
 
+The frontend operates as a 5-layer visual depth stack, with animations and interactions governed by ScrollTrigger and AppState.
+
 ```mermaid
 graph TD
-    UI[Layer 2: Main Content & UI] -->|Streaming / SSE| Backend[FastAPI Core]
-    Backend -->|OTPAR Loop| Agent[AI Agent Orchestrator]
-    Agent -->|Local Inference| LLM[Ollama / WebLLM]
-    Agent -->|Quant Pipelines| Groq[Groq LLaMA 3.3 70B]
-    Agent -->|Retrieval & Caching| Memory[(ChromaDB & Redis)]
-    
-    subgraph Client Visual Layers
-        L0[Layer 0: WebGL Particle Canvas]
-        L1[Layer 1: Ambient Gradients & Ghost Typography]
-        L2[Layer 2: UI & Interactive Terminals]
-        L3[Layer 3: Atmospheric Noise & Scanlines FX]
-        L4[Layer 4: Physics-based Custom Cursor]
-    end
+    L4[Layer 4: Physics-Based Custom Cursor] -->|Reactive state mouse tracking| L3[Layer 3: FX Overlays - Scanlines, Noise, Grid]
+    L3 -->|Parallax scrolling FX| L2[Layer 2: Main Content UI - GSAP, Lenis, Interactive Cards]
+    L2 -->|Scroll triggered active states| L1[Layer 1: Ambient Gradients & Ghost Typography Backdrop]
+    L1 -->|WebGL canvas draw loops| L0[Layer 0: WebGL Particle Canvas Background]
 ```
 
 ---
@@ -95,14 +92,11 @@ nexus3d-portfolio/
     ├── styles/                # CSS Modular Architecture
     │   ├── tokens.css         # Design tokens & color variables
     │   ├── reset.css          # Base reset & accessibility skip-link
-    │   ├── layers.css         # Noise, scanline overlays & ambient gradients
-    │   ├── terminal.css       # Astra & ARTH terminal interface layout
     │   └── responsive.css     # Responsive layouts & reduced-motion settings
     ├── scripts/               # Pure Vanilla JS Modules
     │   ├── state.js           # Central AppState manager (pub/sub pattern)
     │   ├── performance.js     # Live FPS counter & auto-degradation logic
-    │   ├── terminal.js        # Astra-OS OTPAR simulation engine
-    │   └── arth-terminal.js   # ARTH Quant & SSE streaming simulation engine
+    │   └── main.js            # Main controller bootstrapper
     └── animations/            # GSAP Motion Engines
         ├── typography.js      # Letter-by-letter & word-by-word reveals
         └── sections.js        # ScrollTrigger section transitions & parallax
