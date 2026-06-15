@@ -9,7 +9,7 @@
 > **🌐 Live:** [portfolio-eta-ochre-24.vercel.app](https://portfolio-eta-ochre-24.vercel.app)
 
 <p align="center">
-  <img src="src/assets/portfolio_preview.png" alt="Portfolio Preview Showcase" width="100%">
+  <img src="src/assets/portfolio_hero_section.jpeg" alt="Portfolio Preview Showcase" width="100%">
 </p>
 
 ---
