@@ -35,6 +35,12 @@ An institutional-grade quant and research platform delivering low-latency financ
 *   **Resiliency Layer**: Implements circuit-breaker patterns and aggressive Redis TTL caching under high request volume.
 *   **Quant Dashboard Showcase**: High-fidelity UI screenshots showcasing indicators, sentiment analysis, candlestick charts, and risk indexes.
 
+### 3. InnovaHub — Innovation & Event Management System
+A premium full-stack institutional platform serving student idea pitch tracking, event registration, and administrative moderation.
+*   **3D Interactive Interface**: Built with a reactive Three.js particle UI and glassmorphic design system.
+*   **Robust Backend Core**: Engineered Express 5 RESTful API with JWT/bcrypt security, Nodemailer email broadcasting, and database-backed dynamic site configurations.
+*   **Supabase Data Store**: Leverages PostgreSQL with relational schema design and file bucket storage for document and image uploads.
+
 ---
 
 ## 📐 Architecture & Visual Layers
